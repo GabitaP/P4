@@ -1,4 +1,7 @@
 - Role: edxapp
+  - Render auth and env config to a single yml file
+
+- Role: edxapp
   - Remove low priority queue, use default instead.
 
 - Role: ecommerce
