@@ -316,7 +316,6 @@ def check_queues(host, port, environment, deploy, default_threshold, queue_thres
 
     # Temp debugging
     print("DEBUG: new_state from new_state() function\n{}\n".format(pretty_state(new_state)))
-    active_tasks = ""
     for queue_name in queue_names:
         threshold = default_threshold
         if queue_name in thresholds:
@@ -327,7 +326,7 @@ def check_queues(host, port, environment, deploy, default_threshold, queue_thres
         body = extract_body(queue_first_items[queue_name])
         active_tasks = get_current_tasks(host, port, queue_name)
         print("ACTIVE TASKS", active_tasks)
-        redacted_body = {'task': body['task'], 'args': 'REDACTED', 'kwargs': 'REDACTED'}
+        redacted_body = {'task': active_tasks, 'args': 'REDACTED', 'kwargs': 'REDACTED'}
         do_alert = should_create_alert(first_occurance_time, current_time, threshold)
 
         info = generate_info(
