@@ -8,6 +8,6 @@ certifi==2018.4.16        # via requests
 chardet==3.0.4            # via requests
 click==6.7
 idna==2.6                 # via requests
-pyyaml==3.12
+pyyaml==5.4
 requests==2.18.4
 urllib3==1.22             # via requests
